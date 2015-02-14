@@ -1,10 +1,28 @@
 body {
   font-family: "Arial Black", Gadget, sans-serif;
   font-weight: 900;
-  background: url(background.png) repeat;
+  background: url(background2.png) repeat;
   background-color: lavender;
+  li {
+      list-style: none;
+    }
+
+    li:before {
+      /* For a round bullet */
+      content:'\2022';
+      /* For a square bullet */
+      /*content:'\25A0';*/
+      display: block;
+      position: relative;
+      max-width: 0px;
+      max-height: 0px;
+      left: -10px;
+      top: -0px;
+      color: green;
+      font-size: 20px;
+    }
 }
 #wrapper {
-  width: 960px;
+  width: 1200px;
   margin: 20px auto;
 }

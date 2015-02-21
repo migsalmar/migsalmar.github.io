@@ -1,0 +1,29 @@
+body {
+  font-family: "Arial Black", Gadget, sans-serif;
+  font-weight: 900;
+  background: url(../images/background2.png) repeat;
+  background-color: lavender;
+  
+}
+#wrapper {
+  width: 1200px;
+  margin: 20px auto;}
+ 	h1   {color:lightgray; text-align: center;font-size:100px}
+    h2   {color:lightgray; text-align: left;font-size:35px}
+    h3   {color:lightgray; text-align: justify;font-size:26px}
+    h4   {color:lightgray; text-align: justify;font-size:25px}
+    h5   {color:lightgray; text-align: justify;font-size:35px}
+    h6   {color:lightgray; text-align: left;font-size:26px}
+    p    {color:lightgray; text-align: right;font-size:20px}
+    ul 	 {font-size:25px;color:lightgray}
+    ol	 {font-size:25px;color:lightgray}
+}
+
+#link {
+      float: center;
+      text-align:center;
+      }
+      h5.end{text-align:center;}
+      p.end {
+            text-align: center;
+      }

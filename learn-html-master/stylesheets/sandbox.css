@@ -1,0 +1,20 @@
+/* Let's write some CSS code! */
+		
+			p{
+				border: solid 10px; 
+				padding: 12px;
+				padding-top: 46px;
+				padding-bottom: 50px;
+				padding-left: 40px;
+				padding-right: 40px;
+				margin-top: 6px;
+				margin-bottom: 6px;
+				margin-right: 46px;
+				margin-left: 46px;
+				color:red; font-family:"Arial", 
+				sans-serif, "Times New Roman"; 
+				font-size: 12px}
+			p{color:blue; font-size: 24px}
+			table {color:blue;}
+			td {color:red;}
+	

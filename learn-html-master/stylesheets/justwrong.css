@@ -1,0 +1,31 @@
+body {
+  width: 400px;
+  margin: 0 auto;
+  font-family: cursive;
+}
+h1 {
+  float: left;
+}
+h1, h2, h3, h4 {
+  color: green;
+  font-size: 60px;
+  font-weight: bold;
+}
+p, li { 
+  font-size: 37px;
+  line-height: 60px;
+}
+img {
+  float: right;
+}
+#title {
+  overflow: hidden;
+  margin-top: 20px;
+}
+#summary {
+  clear: both;
+  background-color: pink;
+  padding: 20px;
+  border: 9px solid purple;
+  margin-top: 20px;
+}

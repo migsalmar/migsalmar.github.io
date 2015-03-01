@@ -8,18 +8,60 @@
 <head>
   <title>Movies!</title>
   <meta charset="utf-8">
-  <link rel="stylesheet" type="text/css" href="stylesheets/movie.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 </head>
 
 <!-- Body -->
 <body>
+<div class="container">
 
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">
+      <i class="fa fa-magic fa-lg"></i>
+      BuyFlix</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Movies <span class="sr-only">(current)</span></a></li>
+        <li><a href="#">Actors</a></li>
+        
+      </ul>
+      
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <a href="#">
+          <style>
+          .fa-user {color:red;}
+          .navbar-default .navbar-brand {color:red;}
+          </style>
+          <i class="fa fa-lg fa-user"></i> My Account</a></li>
+        
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
   <h1>Guardians of the Galaxy</h1>
 
-  <a href="buynow.html">Buy this movie now!</a>
+  <div class="row">
+  <div class="col-md-3">
 
-  <img src="images/poster.jpg">
-<div>
+  <p><img src="images/poster.jpg"></p>
+  <a class="btn btn-primary" href="buynow.html">Buy this movie now!</a>
+
+</div>
+<div class="col-md-6"
 <!-- group elements together!-->
   <div id="summary">
   <h2>Summary</h2>
@@ -28,15 +70,6 @@
     From Marvel, the studio that brought you the global blockbuster franchises of Iron Man, Thor, Captain America and The Avengers, comes a new team—the Guardians of the Galaxy. An action-packed, epic space adventure, Marvel’s "Guardians of the Galaxy" expands the Marvel Cinematic Universe into the cosmos, where brash adventurer Peter Quill finds himself the object of an unrelenting bounty hunt after stealing a mysterious orb coveted by Ronan, a powerful villain with ambitions that threaten the entire universe. To evade the ever-persistent Ronan, Quill is forced into an uneasy truce with a quartet of disparate misfits—Rocket, a gun-toting raccoon, Groot, a tree-like humanoid, the deadly and enigmatic Gamora and the revenge-driven Drax the Destroyer. But when Quill discovers the true power of the orb and the menace it poses to the cosmos, he must do his best to rally his ragtag rivals for a last, desperate stand—with the galaxy’s fate in the balance.
   </p>
 </div>
-  <h2>Cast</h2>
-
-  <ul>
-    <li><a href="#">Chris Pratt</a> as Peter Quill</li>
-    <li><a href="#">Zoe Saldana</a> as Gamora</li>
-    <li><a href="#">Dave Bautista</a> as Drax</li>
-    <li><a href="#">Vin Diesel</a> as Groot</li>
-    <li><a href="#">Bradley Cooper</a> as Rocket</li>
-  </ul>
 
   <h2>Reviews</h2>
 
@@ -48,7 +81,7 @@
 
   <h2>Information</h2>
 
-  <table>
+  <table class="table">
     <tr>
       <td>Studio</td>
       <td>Marvel</td>
@@ -66,6 +99,23 @@
       <td>Widescreen</td>
     </tr>
   </table>
+  </div>
+  <div class="col-md-3 well">
+  <h2>Cast</h2>
+
+  <ul class="list-unstyled">
+    <li><a href="#">Chris Pratt</a> as Peter Quill</li>
+    <li><a href="#">Zoe Saldana</a> as Gamora</li>
+    <li><a href="#">Dave Bautista</a> as Drax</li>
+    <li><a href="#">Vin Diesel</a> as Groot</li>
+    <li><a href="#">Bradley Cooper</a> as Rocket</li>
+  </ul>
+</div>
+  </div>
+  </div>
+  </div>
+  </body>
+
 
 </body>
 

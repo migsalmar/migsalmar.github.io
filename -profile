@@ -1,0 +1,15 @@
+-profile/
+	-stylesheets/
+		-style.css
+	-images/
+		-photo.png
+
+
+index.html
+aboutme.html
+
+
+background:url(photo.png)
+background: url(../../images/photo.png);
+
+You should not let coce decay; you let it decay a little bit and then slowly it becomes more and more broken.  Whenever there is an opportunity to make the code cleaner, do it.  

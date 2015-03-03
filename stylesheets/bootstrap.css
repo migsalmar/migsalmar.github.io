@@ -1110,9 +1110,9 @@ body {
   font-size: 14px;
   font-style:bold;
   line-height: 1.42857143;
-  color: black;
-  background-image: url(../images/Jedis.jpg);
-  background-size: cover ;
+  color: white;
+  background-image: url(../images/45.jpg);
+  background-size: repeat ;
   background position: center center;
   table-layout:center;
 }
@@ -1319,7 +1319,7 @@ h2,
   font-family:"Verdana";
   font-weight:bold;
   font-style:bold;
-  color:black;
+  color:white;
   font-size: 30px;
  
 }
@@ -1346,6 +1346,7 @@ h5,
 .h5 {
   font-size: 24px;
   font-weight:bold;
+  color:black;
 }
 h6,
 .h6 {
@@ -4455,8 +4456,10 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
 }
 .navbar-default {
-  background-color: #f8f8f8;
-  border-color: #e7e7e7;
+  background-color: #4DFFFF;
+  border-color: solid black;
+  border-top-left-radius: 30px;
+  border-bottom-right-radius: 30px;
 }
 .navbar-default .navbar-brand {
   color: #777;
@@ -4470,18 +4473,18 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   color: #777;
 }
 .navbar-default .navbar-nav > li > a {
-  color: #777;
+  color: #555;
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
-  color: #333;
+  color: #555;
   background-color: transparent;
 }
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
   color: #555;
-  background-color: #e7e7e7;
+  background-color: #4DFFFF;
 }
 .navbar-default .navbar-nav > .disabled > a,
 .navbar-default .navbar-nav > .disabled > a:hover,
@@ -6651,16 +6654,33 @@ color: lightblue;
 
 #hobbies:hover .text {
 visibility:visible;
+color: black;
+font-weight:bold;
 }
 
 footer {background-color: white;
-border:2px solid black; text-align: center;
+border:2px solid white; text-align: center;
 border-radius: 25px; 
 }
 
 li {font-size:20px;
 font-weight:bold;}
 
+#places {background:white;
+  background-image:url(../images/WW.jpg);
+
+background-position:center;
+background-repeat: no-repeat;
+border-radius: 25px;
+  }
+
+table.contact { border-collapse: separate;
+    border-spacing: 20px 3px;
+    font-size:32px;}
+
+p {text-align: right}
+
+#quote{padding-top:60px;}
 
 
 /*# sourceMappingURL=bootstrap.css.map */

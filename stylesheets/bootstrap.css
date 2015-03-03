@@ -6678,7 +6678,7 @@ table.contact { border-collapse: separate;
     border-spacing: 20px 3px;
     font-size:32px;}
 
-p {text-align: right}
+#author {text-align: right}
 
 #quote{padding-top:60px;}
 

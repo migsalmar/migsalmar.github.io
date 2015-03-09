@@ -1,6 +1,6 @@
 html,body {height:100%;}
 
-body 
+.mainpage 
   {
   font-family: "Rockwell",Lucida,sans-serif;
   color:white;
@@ -13,6 +13,45 @@ body
   text-align:center center;
   }
 
+.profile 
+  {
+  font-family: "Rockwell",Lucida,sans-serif;
+  color:white;
+  font-weight:bold;
+  background-image: url(../images/MW3.jpg);
+  background-repeat: no-repeat;
+  background-position: middle;
+  width: 1200px;
+  margin: 20px auto;
+  text-align:center center;
+  }
+
+.creations 
+  {
+  font-family: "Rockwell",Lucida,sans-serif;
+  color:white;
+  font-weight:bold;
+  background-image: url(../images/MW5.jpg);
+  background-repeat: no-repeat;
+  background-position: middle;
+  width: 1200px;
+  margin: 20px auto;
+  text-align:center center;
+  }
+
+
+.contact 
+  {
+  font-family: "Rockwell",Lucida,sans-serif;
+  color:white;
+  font-weight:bold;
+  background-image: url(../images/chitown6.jpg);
+  background-repeat: no-repeat;
+  background-position: middle;
+  width: 1200px;
+  margin: 20px auto;
+  text-align:center center;
+  }
 #first 
   {
   padding: 60px 60px 60px 60px;

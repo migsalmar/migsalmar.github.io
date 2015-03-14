@@ -8,37 +8,87 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 <!--<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">!-->
+ <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="stylesheets\style4.css">
 
 </head>
 <body class="contact">
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"> <img alt="Brand" src="images/turnipp.png" style="width:23px;height:28px"></a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="http://www.apple.com/trailers">Movie Trailers!</a></li>
+        <li id="drop1" class="dropdown">
+          <a id="browse" href="http://www.facebook.com" class="btn dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> Browse Me <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu"aria-labelledby="dLabel">
+            <li><a tabindex="-1" href="index.html">Home Page</a></li>
+            <li><a tabindex="-1" href="Final2.html">My Profile</a></li>
+            <li><a tabindex="-1" href="Final3.html">Photography</a></li>
+            <li><a tabindex="-1" href="Final4.html">Contact Me</a></li>
+            <li class="divider"></li>
+            <li><a tabindex="-1" href="http://www.Lego.com">Buy Some Legos!</a></li>
+            <li class="divider"></li>
+            <li><a tabindex="-1" href="http://www.juansalgadoart.com/">More Art!</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="http://en.wikipedia.org/wiki/Link_%28The_Legend_of_Zelda%29">Link</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+
+  </div><!-- /.container-fluid -->
+</nav>
 <div class="jumbotron" >
-  <h1>Write to us!</h1>
-  <p class="text-center">Yours and any feedback is always welcome</p>
-  <p class="text-center"><a class="btn btn-primary btn-lg" href="secondhw.html" role="button">Fun stuff</a>
+  <h1 id="secondpage">Write me!</h1>
+  <p class="text-center" id="secondpage">Yours and any feedback is always welcome</p>
+  <p class="text-center" id="secondpage"><a class="btn btn-primary btn-lg" href="http://www.expedia.com" role="button">Goodbye!</a>
   </p>
 </div>
 <div class="row" class="text-center" >
+
+<div id="tenth" class="col-md-6">
+<!--<a href="http://www.amazon.com"> Click here to search</a>!-->
+<p class="form" id="fourthpage">Contact me!</p>
+<title>Hi!</title>
+<p class="form" id="fourthpage">Please let me know your feedback</p>
+<!--<a class="form" href="mailto:m-salgado@kellogg.northwestern.edu">...send me a quick comment</a>!-->
+<form class="form" action="mailto:m-salgado@kellogg.northwestern.edu">
+<!--<form action="submit_contact_info.html">!-->
+<!--<p><input name="subject" placeholder="First name"></p>!-->
+<p class="form"><input name="subject" value="Write here and press enter..."></p>
+<p class="form"><textarea rows="10" cols="50" name="body">....or here and hit the submit button below!</textarea></p>
+<!--<input type="checkbox">I'm cool!--> 
+<button id="fifthpage" class="form">Submit</button>
+</form>
+</div>
 <div id="ninth" class="col-md-6">
 <a href="index.html"><img id="hobbie2" src="images/Guate1.jpg" alt="Click here for some more" align="middle"  style="width:512px;height:339px"></a>
 </div>
-<div id="ninth" class="col-md-6">
-<a href="http://www.amazon.com"> Click here to search</a>
-<p>Wazzzzzzup!</p>
-<title>Hi!</title>
-<p>Please let me know your feedback or...</p>
-<a href="mailto:m-salgado@kellogg.northwestern.edu">...send me a quick comment</a>
-<form action="mailto:m-salgado@kellogg.northwestern.edu">
-<!--<form action="submit_contact_info.html">!-->
-<!--<p><input name="subject" placeholder="First name"></p>!-->
-<p><input name="subject" value="My Subject"></p>
-<p><textarea rows="10" cols="50" name="body"></textarea></p>
-<!--<input type="checkbox">I'm cool!-->
-<button>Submit</button>
-</form>
-</div>
 </div>
 
+<footer>
 <div class="row" class="text-center" >
 <div id="ninth" class="col-md-5">
 <h5>Connect With Me on Other Media:</h5>
@@ -47,7 +97,7 @@
 <img src="images/arrow.png" alt="Gmail" align="middle" style="width:75px;height:75px">
 </div>
 <div id="ninth" class="col-md-6">
-          <table class="contacts">
+          
           <td>
           <tr class="text-center"><a href="mailto:migsalmar@gmail.com" style="padding-right:30px"> <img src="images/gmail.png" alt="Gmail" align="middle" style="width:75px;height:75px"style="padding-right:50px"></a></tr>
           </td>
@@ -63,61 +113,24 @@
           <td>
           <tr class="text-center"><a href="https://www.linkedin.com/profile/public-profile-settings?trk=prof-edit-edit-public_profile" style="padding-right:30px"><img src="images/Linkedin.ico" alt="LIN" align="middle" style="width:75px;height:75px" style="padding-right:50px"></a></tr>
           </td>
-          </table>
+          
 </div>
 </div>
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#"></i>Brand</a>
-    </div>
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Link</a></li>
-        <li id="drop1" class="dropdown">
-          <a href="http://www.facebook.com" class="btn dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> Menu <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu"aria-labelledby="dLabel">
-            <li><a tabindex="-1" href="Final2.html">My Profile</a></li>
-            <li><a tabindex="-1" href="Final3.html">Photography</a></li>
-            <li><a tabindex="-1" href="Final4.html">Contact Me</a></li>
-            <li class="divider"></li>
-            <li><a tabindex="-1" href="http://www.Lego.com">Buy Some Legos!</a></li>
-            <li class="divider"></li>
-            <li><a tabindex="-1" href="http://www.apple.com/trailers">Movie Trailers</a></li>
-          </ul>
-        </li>
-      </ul>
-      <form class="navbar-form navbar-left" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-        </div>
-        <button type="submit" class="btn btn-default">Submit</button>
-      </form>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Features</a></li>
-            <li><a href="#">Options</a></li>
-            <li class="divider"></li>
-            <li><a href="Final3.html">Contact Me</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
-
-
+</footer>
+<div class="bott">
+ <td>
+          <tr class="bottom"><a id="link" href="#" style="padding-right:60px ">Conditions of Use </a></tr>
+          </td>
+          <td>
+          <tr class="bottom"><a id="link" href="#" style="padding-right:60px">Privacy Notice</a></tr>
+          </td>
+          <td>
+          <tr class="bottom"><a  id="link" href="#" style="padding-right:60px">Interest Based Ads</a></tr>
+          </td>
+          <td>
+          <tr class="bottom"> (C) 1979-2015, Salgado Inc. or its affiliates</tr>
+          </td>
+        
+</div>
 </body>
 </html>

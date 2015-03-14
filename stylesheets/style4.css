@@ -11,18 +11,20 @@ html,body {height:100%;}
   width: 1200px;
   margin: 20px auto;
   text-align:center center;
+  background position: center center;
   }
 
 .profile 
   {
-  font-family: "Rockwell",Lucida,sans-serif;
-  color:white;
-  font-weight:bold;
+  font-family: "Calibri",Lucida,sans-serif;
+  color:purple;
+  font-weight:solid;
   background-image: url(../images/MW3.jpg);
   background-repeat: no-repeat;
   background-position: middle;
   width: 1200px;
   margin: 20px auto;
+  background position: center center;
   text-align:center center;
   }
 
@@ -31,7 +33,7 @@ html,body {height:100%;}
   font-family: "Rockwell",Lucida,sans-serif;
   color:black;
   font-weight:bold;
-  background-image: url(../images/MW5.jpg);
+  background-image: url(../images/chitown4.jpg);
   background-repeat: no-repeat;
   width: 1200px;
   margin: 20px auto;
@@ -41,7 +43,6 @@ html,body {height:100%;}
   font-family: Tahoma, Geneva, sans-serif;
   font-size:24px;
   color:black;
-  background-size: cover;
   background position: center center;
   table-layout:center;
   }
@@ -59,10 +60,12 @@ html,body {height:100%;}
   margin: 20px auto;
   text-align:center center;
   table-layout:center;
+  background-size:100%;
+  background position: center center;
   }
 #first 
   {
-  padding: 60px 60px 60px 60px;
+  padding: 120px 60px 60px 60px;
   margin: 0px 0px 0px 0px;
   }
 #second 
@@ -85,15 +88,15 @@ html,body {height:100%;}
   border-style:solid;
   border-width:0px 0px 0px 5px;
   border-color:solid white;
-  padding: 60px 60px 60px 60px;
+  padding: 120px 60px 200px 60px;
   margin: 0px 0px 0px 0px;
   }
-#fifth
+    #fifth
   {
-  padding: 60px 60px 60px 60px;
+  padding: 120px 60px 60px 60px;
   margin: 0px 0px 0px 0px;
   }
-#sixth 
+  #sixth 
   {
   border-style:solid;
   border-width:0px 0px 0px 5px;
@@ -103,24 +106,28 @@ html,body {height:100%;}
   }
   #seventh 
   {
+  margin-top:30px;
   border-style:solid;
-  border-width:0px 0px 0px 5px;
+  font-size:32px;
+  border-width:0px 0px 0px 0px;
   border-color:solid white;
   padding: 0px 0px 0px 0px;
   margin: 0px 0px 0px 0px;
   }
   #eigth 
   {
+  margin-top:30px;
   border-style:solid;
-  border-width:0px 0px 0px 5px;
+  font-size:32px;
+  border-width:0px 0px 0px 0px;
   border-color:solid white;
   padding: 0px 0px 0px 0px;
   margin: 0px 0px 0px 0px;
   }
   #ninth 
   {
-  margin-top:100px;
-  color:white;
+  margin-top:0px;
+  color:lightblue;
   font-family:comic;
   text-align:center center;
   border-style:solid;
@@ -130,9 +137,18 @@ html,body {height:100%;}
   margin-left:auto;
   margin-right:auto;
   }
-.row
+  #tenth 
   {
-
+  margin-top:0px;
+  color:lightblue;
+  font-family:comic;
+  text-align:center center;
+  border-style:solid;
+  border-width:0px 0px 0px 0px;
+  border-color:solid white;
+  padding: 0px 0px 0px 0px;
+  margin-left:auto;
+  margin-right:auto;
   }
 #hobbie 
   {
@@ -143,6 +159,7 @@ html,body {height:100%;}
   #hobbie2 
   {
   margin-top:80px;
+  margin-left:40px;
   opacity:0.6;
   border: 2px solid;
   border-radius: 100px
@@ -154,6 +171,7 @@ html,body {height:100%;}
   #hobbie2:hover 
   {
   opacity: 1.0;
+
   }
 svg:not(:root) 
   {
@@ -161,7 +179,8 @@ svg:not(:root)
   }
  h1,h2, h5
   {
-  font-size:32px
+  font-size:36px
+
   }
   h5
   {
@@ -170,14 +189,26 @@ svg:not(:root)
   margin-left:auto; 
   margin-right:auto;
   }
+  #topic{font-size:32px
+  font-weight:bold;
+  background-image: url(../images/CC.jpg);
+  border-radius:25px;
+  border:2px solid white;
+  padding:1px 1px 1px 1px;}
   table 
-  }
   {
   border-color:red;margin:red;
   }
 .one
   {
   text-align: justify;
+  font-size:25px;
+  color:white;
+  font-weight:bold;
+  background-image: url(../images/CC.jpg);
+  border-radius:25px;
+  border:2px solid white;
+  padding:10px 10px 10px 10px;
   }
   #hobbies .text 
   {
@@ -194,10 +225,6 @@ color: black;
 font-weight:bold;
 }
 
-footer {background-color: #4DFFFF;
-border:2px solid white; text-align: center;
-border-radius: 25px; 
-}
 
 li {font-size:20px;
 font-weight:bold;}
@@ -239,15 +266,11 @@ color: black;
 font-weight:bold;
 }
 
-footer {background-color: #4DFFFF;
-border:2px solid white; text-align: center;
-border-radius: 25px; 
-}
 
 .navbar-default {
   margin-top:50px;
-  color:red;
-  background-color: #4DFFFF;
+  color:purple;
+ background-image: url(../images/Jedis.jpg);
   border-color: solid black;
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
@@ -255,14 +278,13 @@ border-radius: 25px;
   border-bottom-right-radius: 30px;
 }
 
-}
 .navbar-default .navbar-brand {
   color: #777;
 }
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus {
   color: #4DFFFF;
-  background-color: #4DFFFF;
+ background-image: url(../images/Jedis.jpg);
 }
 .navbar-default .navbar-text {
   color: #777;
@@ -279,7 +301,7 @@ border-radius: 25px;
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
   color: #555;
-  background-color: #4DFFFF;
+  background-color: transparent;
 }
 .navbar-default .navbar-nav > .disabled > a,
 .navbar-default .navbar-nav > .disabled > a:hover,
@@ -292,10 +314,10 @@ border-radius: 25px;
 }
 .navbar-default .navbar-toggle:hover,
 .navbar-default .navbar-toggle:focus {
-  background-color: #4DFFFF;
+  background-color: transparent;
 }
 .navbar-default .navbar-toggle .icon-bar {
-  background-color: #4DFFFF;
+  background-color: transparent;
 }
 .navbar-default .navbar-collapse,
 .navbar-default .navbar-form {
@@ -305,7 +327,7 @@ border-radius: 25px;
 .navbar-default .navbar-nav > .open > a:hover,
 .navbar-default .navbar-nav > .open > a:focus {
   color: #555;
-  background-color: #4DFFFF;
+  background-color: transparent;
 }
 @media (max-width: 767px) {
   .navbar-default .navbar-nav .open .dropdown-menu > li > a {
@@ -314,19 +336,19 @@ border-radius: 25px;
   .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
   .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
     color: #333;
-    background-color: #4DFFFF;
+    background-color: transparent;
   }
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
     color: #555;
-    background-color: #4DFFFF;
+    background-color: transparent
   }
   .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a,
   .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:hover,
   .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:focus {
     color: #ccc;
-    background-color: #4DFFFF;
+    background-color: transparent;
   }
 }
 .navbar-default .navbar-link {
@@ -393,12 +415,12 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   }
 
 .btn-primary {
-  color: #fff;
-  background-color: #4DFFFF;
+  color: white;
+  background-color: transparent;
   border-color: #2e6da4;
 }
 .navbar-default {
-  background-color: #4DFFFF;
+  background-color: transparent;
   border-color: solid black;
   border-top-left-radius: 30px;
   border-bottom-right-radius: 30px;
@@ -407,13 +429,21 @@ fieldset[disabled] .navbar-default .btn-link:focus {
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
   color: #555;
-  background-color: #4DFFFF;
+  background-color: transparent;
 }
 
-.navbar-nav{background-color:#4DFFFF;}
-
-#h1{padding-top:100px;}
-
+.navbar-nav{
+  color:white;
+  background-color:transparent;
+}
+.collapse .navbar-collapse {
+  color:white;
+  font-size:15px;
+}
+#h1{
+      padding-top:100px;  
+    }
+.btn .dropdown-toggle {color:white;}
 .photography  
     {
     padding: 10px 10px 10px 10px;
@@ -426,7 +456,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
     margin-left:auto; 
     margin-right:auto;
     }
-    #picture_table
+    #picture_table 
     {
     padding: 10px 10px 10px 10px;
     border-style: groove;
@@ -439,7 +469,10 @@ fieldset[disabled] .navbar-default .btn-link:focus {
     margin: 10px 10px 10px 10px;
     margin-left:auto; 
     margin-right:auto;
+    color:white;
+    border-radius:15px;
     }
+    #pic{border-radius:25px;}
     #gear {
     vertical-align: center;
     list-style-position:center;
@@ -473,8 +506,13 @@ fieldset[disabled] .navbar-default .btn-link:focus {
     margin-left:auto; 
     margin-right:auto;
     }
-  p {
+  p.form {
     font-size: 18px;
+    color:black;
+    text-align:center center;
+    margin-left:auto;
+    margin-right:auto;
+    width:500px;
     }
 
 #pictures {
@@ -488,7 +526,127 @@ fieldset[disabled] .navbar-default .btn-link:focus {
     color:white;
     line-height:50%;
   }
-  #final
+  #Dalek {
+    margin-top:60px;
+    opacity:0.4;
+    border: 2px solid;
+    border-radius: 25px
+}
+#Dalek:hover {
+    opacity: 1.0;}
+
+footer 
+{
+background-color: transparent;
+color:lightblue;
+font-style:solid;
+margin-top:120px;
+border:4px solid white; 
+text-align: center;
+border-radius: 25px; 
+padding:10px 10px 10px 10px;
+}
+
+.bott 
   {
-    margin-top:40px;
+  font-family: "Rockwell",Lucida,sans-serif;
+  color:white;
+  font-weight:bold;
+  background-image: url(../images/CC.jpg);
+  background-repeat: no-repeat;
+  background-position: middle;
+  width: 1200px;
+  margin: 5px auto;
+  text-align:center center;
+  background position: center center;
+  border-radius:10px;
+  border: 4px solid white;
+  margin-top:50px;
+  }
+
+#link
+{
+color:white;
+font-size:17px;
+padding:0 70px 0 70px;
+}
+#link2
+{
+color:white;
+font-size:17px;
+padding:0 30px 0 30px;
+}
+#bottom2
+{
+ color:white;
+font-size:17px;
+padding:0 30px 0 30px;
+} 
+
+.nav .navbar-default {background-image: url(../images/CC.jpg);
+  background-repeat: no-repeat;}
+  #secondpage{
+    color:purple;
+    font-weight:solid;
+  }
+#fourthpage{
+    color:white;
+    font-weight:solid;
+    font-size: 25px;
+  }
+
+  #fifthpage{
+    margin-left:60px;
+    font-size: 20px;
+    font-color:purple;}
+
+    #sixthpage{
+     font-color:beige;}
+
+     #browse
+     {font-size:20px;
+      font-weight:bold;}
+.bott2 
+  {
+  font-family: "Rockwell",Lucida,sans-serif;
+  color:white;
+  font-weight:bold;
+  background-image: url(../images/CC.jpg);
+  background-repeat: no-repeat;
+  background-position: middle;
+  width: 1200px;
+  margin: 5px auto;
+  text-align:center center;
+  background position: center center;
+  border-radius:10px;
+  border: 4px solid white;
+  margin-top:50px;
+  }
+
+      #link2
+{
+color:white;
+font-size:20px;
+padding:0 25px 0 25px;
+}
+#bottom2
+{
+ color:white;
+font-size:20px;
+padding:0 25px 0 25px;
+} 
+
+.two
+  {
+  text-align: justify;
+  font-size:35px;
+  color:black;
+  font-weight:bold;
+  background-image: url(../images/chitown.jpg);
+  border-radius:25px;
+  border:2px solid white;
+  padding:10px 5px 10px 5px;
+  margin: 30px 0px 30px 0px; 
+  border-spacing:0px 0px 0px 0px;
+  text-align:center;
   }

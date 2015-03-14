@@ -19,3 +19,13 @@ div{
 		background-color: gray;
 	}
 				
+				#in-cart{
+					display:none;
+					background:red;
+
+				}
+
+
+				div.reviews h2{
+						cursor:pointer;
+				}

@@ -8,23 +8,74 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 <!--<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">!-->
+ <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="stylesheets\style4.css">
 
 </head>
 <body class="mainpage">
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"> <img alt="Brand" src="images/turnipp.png" style="width:23px;height:28px"></a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav" >
+        <li id="drop1"><a href="http://www.apple.com/trailers">Movie Trailers!</a></li>
+        <li id="drop1" class="dropdown" >
+          <a id="browse" href="#" class="btn dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> Browse Me <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu"aria-labelledby="dLabel">
+            <li><a tabindex="-1" href="index.html">Home Page</a></li>
+            <li><a tabindex="-1" href="Final2.html">My Profile</a></li>
+            <li><a tabindex="-1" href="Final3.html">Photography</a></li>
+            <li><a tabindex="-1" href="Final4.html">Contact Me</a></li>
+            <li class="divider"></li>
+            <li><a tabindex="-1" href="http://www.Lego.com">Buy Some Legos!</a></li>
+            <li class="divider"></li>
+            <li ><a tabindex="-1" href="http://www.juansalgadoart.com/">More Art!</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="http://en.wikipedia.org/wiki/Link_%28The_Legend_of_Zelda%29">Link</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+
+  </div><!-- /.container-fluid -->
+</nav>
+
+
+
 <div class="jumbotron" >
   <h1>Hello!</h1>
   <p class="text-center">Welcome to my page!</p>
-  <p class="text-center"><a class="btn btn-primary btn-lg" href="secondhw.html" role="button">Learn more</a></p>
+  <p class="text-center"><a class="btn btn-primary btn-lg" href="Final4.html" role="button">Contact Me</a></p>
 </div>
 
 <div class="row" class="text-center">
   <div id="first" class="col-md-6">
-      <h1 class="text-center"> My Profile</h1>
+      <h1 class="text-center" id="topic"> My Profile</h1>
       <p class="one">
         Allow me to present myself and show you many of my motivations and hobbies.  The page is not intended to be a resume but to show you some of my interests.  
 
-        Click on me for more!
+        Click on me on the right for more!
       </p>
   </div>
 
@@ -42,17 +93,21 @@
         </p>
 </div>
   <div id="fourth" class="col-md-6">
-      <h1 class="text-center"> Photography</h1>
+      <h1 class="text-center" id="topic"> Photography</h1>
       <p class="one">
-        My name is Miguel Salgado and I'm originally from Puerto Rico.  I moved to Chicago in 2006 after graduating from college as both a Biologist and Mechanical Engineer.  I currently work as a rotating equipment maintenance and reliability engineer for a major oil company in Northwest Indiana. I founded and led various diversity and inclusion initiatives within my company as I have a deep affinity for fairness and equality for all.  I also currently attend the Kellogg School of Business part-time MBA program where I am majoring in International Busines Strategy, and Entrepeneurship and Innovation.  I am also an active member of the Kellogg part-time MBA student association and am currently working to bring MOSAIC week diversity initiative to Wieboldt Hall. 
+        Just a few samples of pictures I take whenever I have free time, a.k.a. before and hopefully after business school. 
+
+        Click on the sphere on the left!   
       </p>
   </div>
   </div>
 <div class="row" class="text-center">
   <div id="fifth" class="col-md-6">
-      <h1 class="text-center"> Contact Page</h1>
+      <h1 class="text-center" id="topic"> Contact Page</h1>
       <p class="one">
-        My name is Miguel Salgado and I'm originally from Puerto Rico.  I moved to Chicago in 2006 after graduating from college as both a Biologist and Mechanical Engineer.  I currently work as a rotating equipment maintenance and reliability engineer for a major oil company in Northwest Indiana. I founded and led various diversity and inclusion initiatives within my company as I have a deep affinity for fairness and equality for all.  I also currently attend the Kellogg School of Business part-time MBA program where I am majoring in International Busines Strategy, and Entrepeneurship and Innovation.  I am also an active member of the Kellogg part-time MBA student association and am currently working to bring MOSAIC week diversity initiative to Wieboldt Hall. 
+        In case you want to contact me just to say hi or get together.  There are many other links to other pages with more of my info. 
+
+        Click on the dueling Merlions on the right to access! 
       </p>
 
   </div>
@@ -64,51 +119,22 @@
         </p>
   </div>
   </div>
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#"> <img alt="Brand" src="images/turnipp.png" style="width:23px;height:28px"></a>
-    </div>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li><a href="http://www.apple.com/trailers">Movie Trailers!</a></li>
-        <li id="drop1" class="dropdown">
-          <a href="http://www.facebook.com" class="btn dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> Browse Me <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu"aria-labelledby="dLabel">
-            <li><a tabindex="-1" href="Final2.html">My Profile</a></li>
-            <li><a tabindex="-1" href="Final3.html">Photography</a></li>
-            <li><a tabindex="-1" href="Final4.html">Contact Me</a></li>
-            <li class="divider"></li>
-            <li><a tabindex="-1" href="http://www.Lego.com">Buy Some Legos!</a></li>
-            <li class="divider"></li>
-            <li><a tabindex="-1" href="http://http://www.juansalgadoart.com/">More Art!</a></li>
-          </ul>
-        </li>
-      </ul>
-      <form class="navbar-form navbar-left" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-        </div>
-        <button type="submit" class="btn btn-default">Submit</button>
-      </form>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-
-  </div><!-- /.container-fluid -->
-</nav>
-
-
+<div class="bott">
+ <td>
+          <tr class="bottom"><a id="link" href="#" style="padding-right:60px ">Conditions of Use </a></tr>
+          </td>
+          <td>
+          <tr class="bottom"><a id="link" href="#" style="padding-right:60px">Privacy Notice</a></tr>
+          </td>
+          <td>
+          <tr class="bottom"><a  id="link" href="#" style="padding-right:60px">Interest Based Ads</a></tr>
+          </td>
+          <td>
+          <tr class="bottom" id="link"> (C) 1979-2015, Salgado Inc. or its affiliates</tr>
+          </td>
+        
+</div>
 
 </body>
 </html>

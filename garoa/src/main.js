@@ -41,7 +41,16 @@ const post = new PostFX(renderer, scene, camera, quality, world.postHooks || {})
 const controls = new FirstPersonControls(camera, canvas, walkmap);
 
 const camIndex = Math.max(1, Math.min(VIEWPOINTS.length, parseInt(params.get('cam') || '1', 10))) - 1;
-controls.setPose(VIEWPOINTS[camIndex].pos, VIEWPOINTS[camIndex].target);
+if (params.has('pos') && params.has('look')) {
+  // free review camera: ?pos=x,y,z&look=x,y,z (no ground snapping)
+  const pos = params.get('pos').split(',').map(Number);
+  const look = params.get('look').split(',').map(Number);
+  camera.position.fromArray(pos);
+  camera.lookAt(...look);
+  controls.enabled = false;
+} else {
+  controls.setPose(VIEWPOINTS[camIndex].pos, VIEWPOINTS[camIndex].target);
+}
 
 // HUD
 const gate = document.getElementById('gate');

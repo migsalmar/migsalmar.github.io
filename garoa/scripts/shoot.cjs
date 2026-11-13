@@ -23,7 +23,8 @@ const cams = (process.env.CAMS || '1,2,3').split(',').map(Number);
   });
   page.on('pageerror', (e) => errors.push(`[pageerror] ${e.message}`));
   for (const cam of cams) {
-    const url = `${base}?shot&cam=${cam}&q=${q}&t=${t}`;
+    const extra = process.env.EXTRA ? '&' + process.env.EXTRA : '';
+    const url = `${base}?shot&cam=${cam}&q=${q}&t=${t}${extra}`;
     const t0 = Date.now();
     await page.goto(url, { waitUntil: 'load' });
     try {

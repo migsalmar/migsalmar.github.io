@@ -33,7 +33,7 @@ export const BANDEIRA = { x0: -78, x1: -36, z0: 22, z1: 58, height: 268 };
 // Fixed camera positions used for review screenshots and the 1/2/3 keys.
 export const VIEWPOINTS = [
   { name: 'Vale', pos: [4, 1.7, 96], target: [-2, 16, 0] },
-  { name: 'Viaduto', pos: [-21.5, 21.7, -3.2], target: [40, 14, -70] },
+  { name: 'Viaduto', pos: [-32.5, 21.7, -6.3], target: [40, 52, -66] },
   { name: 'Céu', pos: [14, 1.7, -24], target: [-40, 90, 30] },
 ];
 

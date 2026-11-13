@@ -43,8 +43,9 @@ export function createValley(assets) {
   // --- Ridge masses (retaining walls + plateau). Front-row towers cover most of their faces.
   const ridgeMat = concreteMaterial(assets, { color: 0x6d6862 });
   const ridgeGeo = mergeGeometries([
-    box(VALLEY.halfWidth, -2, VALLEY.zMin - 400, 900, H, VALLEY.zMax + 400, 6),
-    box(-900, -2, VALLEY.zMin - 400, -VALLEY.halfWidth, H, VALLEY.zMax + 400, 6),
+    // set back behind the tower faces so the two never z-fight
+    box(VALLEY.halfWidth + 3.5, -2, VALLEY.zMin - 400, 900, H, VALLEY.zMax + 400, 6),
+    box(-900, -2, VALLEY.zMin - 400, -VALLEY.halfWidth - 3.5, H, VALLEY.zMax + 400, 6),
   ]);
   const ridges = new THREE.Mesh(ridgeGeo, ridgeMat);
   ridges.name = 'ridges';

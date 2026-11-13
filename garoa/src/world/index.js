@@ -4,6 +4,10 @@ import { createValley } from './valley.js';
 import { createCity } from './city.js';
 import { createGround } from './ground.js';
 import { createRain } from './rain.js';
+import { createSigns } from './signs.js';
+import { createHologram } from './hologram.js';
+import { createPixacao } from './pixacao.js';
+import { createAviationLights } from './aviation.js';
 
 // Assembles the scene. Each component exposes an optional update(t, dt, camera).
 export function buildWorld({ scene, assets, quality, walkmap, camera }) {
@@ -33,6 +37,21 @@ export function buildWorld({ scene, assets, quality, walkmap, camera }) {
   updaters.push((t) => (city.material.userData.uniforms.uTime.value = t));
   console.info('[garoa] city', JSON.stringify(city.counts));
 
+  const signs = createSigns(city);
+  scene.add(signs.group);
+  signs.setLightBudget(quality.current.neonLights);
+  const holo = createHologram();
+  scene.add(holo.group);
+  const pix = createPixacao(city);
+  scene.add(pix.mesh);
+  const avi = createAviationLights(city.aviation, city.rnd);
+  scene.add(avi.mesh);
+  updaters.push((t) => {
+    signs.uniforms.uTime.value = t;
+    holo.uniforms.uTime.value = t;
+    avi.uniforms.uTime.value = t;
+  });
+
   // Ambient: the city glow from the cloud deck above, almost nothing from below.
   const hemi = new THREE.HemisphereLight(0x8a4a22, 0x0a0806, 0.12);
   scene.add(hemi);
@@ -42,6 +61,11 @@ export function buildWorld({ scene, assets, quality, walkmap, camera }) {
     city,
     ground,
     rain,
+    signs,
+    holo,
+    onQuality(q) {
+      signs.setLightBudget(q.neonLights);
+    },
     attachPost(post) {
       post.afterFog = [
         (q) => {

@@ -108,6 +108,7 @@ export function createCity(assets) {
     const blind = spec.blind ?? rnd() < 0.55;
     const flags = (blind ? 1 : 0) + (spec.ground ? 2 : 0);
     const wet = R(0.75, 1.0);
+    const parapet = spec.parapet ?? 1.3;
     const base = spec.base;
     const top = base + spec.height;
     let { x0, x1, z0, z1 } = spec;
@@ -126,10 +127,10 @@ export function createCity(assets) {
       z1 -= inset;
       y = yBreak;
       tw.tiers.push(
-        tier({ x0, x1, z0, z1, y0: y, y1: top, floorH, bayW, lit, seed, type: style.type, flags: flags & 1, parapet: 1.4, wet, color }),
+        tier({ x0, x1, z0, z1, y0: y, y1: top, floorH, bayW, lit, seed, type: style.type, flags: flags & 1, parapet, wet, color }),
       );
     } else {
-      tw.tiers.push(tier({ x0, x1, z0, z1, y0: y, y1: top, floorH, bayW, lit, seed, type: style.type, flags, parapet: 1.3, wet, color }));
+      tw.tiers.push(tier({ x0, x1, z0, z1, y0: y, y1: top, floorH, bayW, lit, seed, type: style.type, flags, parapet, wet, color }));
     }
     if (!spec.noRoof) roofStuff(x0, x1, z0, z1, top, top > 110, seed);
     towers.push(tw);
@@ -171,6 +172,8 @@ export function createCity(assets) {
         const x1 = side > 0 ? face + depth : -face;
         const tw = tower({
           x0, x1, z0, z1, base: 0, height, ground: true,
+          // blank platibanda: tall ones are where pixadores write
+          parapet: rnd() < 0.6 ? R(2.6, 4.2) : R(1.2, 1.6),
           style: nearGap ? STYLE_TABLE[0] : undefined,
           color: nearGap ? [0.74, 0.7, 0.62] : undefined,
           setback: nearGap ? false : undefined,
@@ -352,7 +355,8 @@ export function createCity(assets) {
   const acMesh = createACs(acs);
   group.add(acMesh);
 
-  return { group, material, towers, frontRow, aviation, mesh, counts: { tiers: N, tanks: tanks.length, masts: masts.length, acs: acs.length } };
+  frontRow.sort((a, b) => a.side - b.side || a.z0 - b.z0);
+  return { group, material, towers, frontRow, aviation, mesh, rnd, counts: { tiers: N, tanks: tanks.length, masts: masts.length, acs: acs.length } };
 }
 
 function acTexture() {

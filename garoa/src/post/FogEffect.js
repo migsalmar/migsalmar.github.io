@@ -97,7 +97,11 @@ void mainImage(const in vec4 inputColor, const in vec2 uv, const in float depth,
   float T = exp(-od);
   float midY = uCamPos.y + rd.y * min(dist, 260.0) * 0.5;
   vec3 fogCol = mix(uFogHigh, uFogLow, exp(-max(midY, 0.0) / 45.0));
-  vec3 col = inputColor.rgb * T + fogCol * (1.0 - T);
+  // guard: never let a NaN/Inf from the scene reach bloom, which would smear it
+  vec3 src = inputColor.rgb;
+  if (any(isnan(src)) || any(isinf(src))) src = vec3(0.0);
+  src = min(src, vec3(2000.0));
+  vec3 col = src * T + fogCol * (1.0 - T);
 
   // Searchlight in-scattering.
   if (uSLOn > 0.5) {
@@ -139,11 +143,11 @@ void mainImage(const in vec4 inputColor, const in vec2 uv, const in float depth,
 
   // Backlit drizzle: thin streaks only visible where the scene behind them is bright.
   if (uRainAmount > 0.0) {
-    float lum = dot(inputColor.rgb, vec3(0.2126, 0.7152, 0.0722));
+    float lum = dot(src, vec3(0.2126, 0.7152, 0.0722));
     float far = smoothstep(4.0, 30.0, dist);
     float r = rainLayer(uv, 220.0, 2.4, 1.0) * 0.6 + rainLayer(uv + 0.37, 140.0, 1.7, 7.0) * 0.4;
     float backlit = smoothstep(0.05, 1.5, lum);
-    col += r * uRainAmount * far * (fogCol * 0.6 + backlit * 0.35 * inputColor.rgb / max(lum, 1e-3));
+    col += r * uRainAmount * far * (fogCol * 0.6 + backlit * 0.35 * src / max(lum, 1e-3));
   }
 
   outputColor = vec4(col, inputColor.a);

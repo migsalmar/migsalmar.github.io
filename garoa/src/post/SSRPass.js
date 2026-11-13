@@ -60,8 +60,10 @@ const TRACE_FRAG = /* glsl */ `
 
     float puddle = puddleMask(wp.xz);
     vec2 slope = rippleSlope(wp.xz, uTime) * puddle;
-    // micro-roughness of wet stone outside puddles: subtle normal jitter
-    vec2 jitter = (vec2(wNoise(wp.xz * 9.0), wNoise(wp.xz * 9.0 + 5.3)) - 0.5) * 0.06 * (1.0 - puddle);
+    // micro-roughness of wet stone outside puddles: stochastic normal jitter, mostly
+    // along the view direction so the blur turns it into vertical streaks
+    vec2 jn = vec2(wHash(gl_FragCoord.xy), wHash(gl_FragCoord.xy + 17.17)) - 0.5;
+    vec2 jitter = jn * 0.16 * (1.0 - puddle) + (vec2(wNoise(wp.xz * 9.0), wNoise(wp.xz * 9.0 + 5.3)) - 0.5) * 0.05;
     vec3 nW = normalize(vec3(-(slope.x + jitter.x), 1.0, -(slope.y + jitter.y)));
     vec3 nV = normalize((uView * vec4(nW, 0.0)).xyz);
 
@@ -111,7 +113,8 @@ const TRACE_FRAG = /* glsl */ `
     float edge = e.x * e.y;
     float facing = 1.0 - smoothstep(-0.1, 0.25, R.z); // rays toward the camera can't be resolved
     vec3 col = texture2D(tColor, hitUv).rgb;
-    col = min(col, vec3(14.0));
+    if (any(isnan(col)) || any(isinf(col))) col = vec3(0.0);
+    col = min(col, vec3(6.0));
     float w = reflectivity * edge * facing * mix(1.0, 0.6, hitSky);
     gl_FragColor = vec4(col * w, flatness);
   }
@@ -126,9 +129,9 @@ const BLUR_FRAG = /* glsl */ `
     vec4 c = texture2D(tInput, vUv);
     float wsum = 0.4;
     vec3 acc = c.rgb * 0.4;
-    for (int i = 1; i <= 6; i++) {
+    for (int i = 1; i <= 8; i++) {
       float fi = float(i);
-      float w = exp(-fi * fi / 18.0);
+      float w = exp(-fi * fi / 24.0);
       vec4 a = texture2D(tInput, vUv + uDir * fi);
       vec4 b = texture2D(tInput, vUv - uDir * fi);
       acc += a.rgb * w * a.a + b.rgb * w * b.a;
@@ -147,6 +150,7 @@ const COMPOSITE_FRAG = /* glsl */ `
   ${COMMON}
   void main() {
     vec4 base = texture2D(tInput, vUv);
+    if (any(isnan(base.rgb)) || any(isinf(base.rgb))) base.rgb = vec3(0.0);
     float d = texture2D(tDepth, vUv).r;
     float m = 0.0;
     if (d < 0.99999) { vec3 wp; m = flatUp(vUv, viewPos(vUv), wp); }
@@ -245,13 +249,18 @@ export class SSRPass extends Pass {
     this.blit(renderer, this.traceMat, this.traceRT);
     const bu = this.blurMat.uniforms;
     const tw = this.traceSize;
-    // long vertical streaks, then a light horizontal soften
+    // vertical streaks: a contiguous pass, then a wide one on top of it (smooth falloff,
+    // no tap banding), then a light horizontal soften
     bu.tInput.value = this.traceRT.texture;
-    bu.uDir.value.set(0, 2.2 / tw.y);
+    bu.uDir.value.set(0, 1.0 / tw.y);
     this.blit(renderer, this.blurMat, this.blurRT);
     bu.tInput.value = this.blurRT.texture;
-    bu.uDir.value.set(0.7 / tw.x, 0);
+    bu.uDir.value.set(0, 3.0 / tw.y);
     this.blit(renderer, this.blurMat, this.traceRT);
+    bu.tInput.value = this.traceRT.texture;
+    bu.uDir.value.set(1.0 / tw.x, 0);
+    this.blit(renderer, this.blurMat, this.blurRT);
+    this.compositeMat.uniforms.tSSR.value = this.blurRT.texture;
 
     this.compositeMat.uniforms.tInput.value = inputBuffer.texture;
     this.blit(renderer, this.compositeMat, this.renderToScreen ? null : outputBuffer);

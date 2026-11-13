@@ -144,7 +144,7 @@ export function createValley(assets) {
   const ringGeo = new THREE.TorusGeometry(0.36, 0.035, 6, 24).rotateX(Math.PI / 2);
   const n = lampXs.length * 2;
   const poles = new THREE.InstancedMesh(poleGeo, railMat, n);
-  const heads = new THREE.InstancedMesh(headGeo, new THREE.MeshBasicMaterial({ color: new THREE.Color(1.0, 0.55, 0.2).multiplyScalar(9) }), n);
+  const heads = new THREE.InstancedMesh(headGeo, new THREE.MeshBasicMaterial({ color: new THREE.Color(1.0, 0.55, 0.2).multiplyScalar(5) }), n);
   const rings = new THREE.InstancedMesh(ringGeo, new THREE.MeshBasicMaterial({ color: new THREE.Color(0.2, 0.9, 1.0).multiplyScalar(5) }), n);
   const m4 = new THREE.Matrix4();
   const lampPositions = [];

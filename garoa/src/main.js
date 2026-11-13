@@ -13,6 +13,10 @@ const FIXED_T = params.has('t') ? parseFloat(params.get('t')) : null;
 if (SHOT) document.body.classList.add('shot');
 
 const quality = new Quality(params.get('q') || 'medium');
+// Debug overrides: any preset key can be forced from the URL, e.g. ?smaa=0&ssrSteps=16
+for (const [k, v] of params) {
+  if (k in quality.current && k !== 'name') quality.current[k] = v === 'true' ? true : v === 'false' ? false : Number(v);
+}
 const canvas = document.getElementById('view');
 const renderer = new THREE.WebGLRenderer({
   canvas,

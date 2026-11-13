@@ -25,6 +25,7 @@ export class PostFX {
     this.quality = quality;
     this.composer = null;
     this.time = 0;
+    this.afterFog = []; // factories (quality) => Pass, inserted after the fog pass
     this.build();
   }
 
@@ -53,6 +54,7 @@ export class PostFX {
       }
     }
     composer.addPass(new EffectPass(this.camera, this.fog));
+    for (const make of this.afterFog) composer.addPass(make(q));
 
     this.bloom = new BloomEffect({
       mipmapBlur: true,

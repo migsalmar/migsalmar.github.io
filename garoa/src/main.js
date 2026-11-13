@@ -37,7 +37,8 @@ window.__garoa = state;
 const assets = await loadAssets(renderer);
 const walkmap = new Walkmap();
 const world = buildWorld({ scene, renderer, camera, assets, quality, walkmap });
-const post = new PostFX(renderer, scene, camera, quality, world.postHooks || {});
+const post = new PostFX(renderer, scene, camera, quality);
+world.attachPost?.(post);
 const controls = new FirstPersonControls(camera, canvas, walkmap);
 
 const camIndex = Math.max(1, Math.min(VIEWPOINTS.length, parseInt(params.get('cam') || '1', 10))) - 1;
@@ -94,6 +95,7 @@ function frame(now) {
   const t = FIXED_T ?? elapsed;
   if (!SHOT) controls.update(dt);
   world.update(t, dt, camera);
+  post.update(t);
   post.render(SHOT ? 1 / 60 : dt);
 
   fpsAccum += dt;

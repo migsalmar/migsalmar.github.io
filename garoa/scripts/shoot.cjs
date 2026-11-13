@@ -28,7 +28,10 @@ const cams = (process.env.CAMS || '1,2,3').split(',').map(Number);
     const t0 = Date.now();
     await page.goto(url, { waitUntil: 'load' });
     try {
-      await page.waitForFunction(() => window.__garoa && window.__garoa.ready, null, { timeout: 300000, polling: 1000 });
+      await Promise.race([
+        page.waitForFunction(() => window.__garoa && window.__garoa.ready, null, { timeout: 300000, polling: 1000 }),
+        new Promise((_, rej) => page.once('pageerror', (e) => rej(new Error('page error: ' + e.message)))),
+      ]);
     } catch (e) {
       console.log('timeout; console:\n' + errors.join('\n'));
       throw e;

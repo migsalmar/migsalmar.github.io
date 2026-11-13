@@ -38,10 +38,10 @@ export function createSky() {
         float c = fbm(cp * 1.4);
         float c2 = fbm(cp * 4.0 + 3.0);
         float clouds = smoothstep(0.25, 0.85, c * 0.75 + c2 * 0.35);
-        vec3 sodium = vec3(1.0, 0.36, 0.09);
+        vec3 sodium = vec3(1.0, 0.42, 0.16);
         vec3 base = vec3(0.012, 0.008, 0.010);
         // cloud underside brightness falls off away from the horizon (city glow)
-        float glow = mix(0.22, 0.07, pow(h, 0.6));
+        float glow = mix(0.15, 0.035, pow(h, 0.55));
         vec3 col = base + sodium * glow * (0.35 + 0.9 * clouds);
         // faint magenta/cyan neon bounce in patches
         float tint = fbm(cp * 0.6 + 11.0);

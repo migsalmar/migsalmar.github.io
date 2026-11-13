@@ -335,7 +335,14 @@ export function createCity(assets) {
 
   // Masts and antennas
   const mastGeo = new THREE.CylinderGeometry(0.6, 1, 1, 6).translate(0, 0.5, 0);
-  const mastMat = new THREE.MeshStandardMaterial({ color: 0x302d2b, roughness: 0.5, metalness: 0.8 });
+  const mastMat = new THREE.MeshStandardMaterial({
+    color: 0x5a5450,
+    map: assets.rust.map,
+    normalMap: assets.rust.normalMap,
+    roughnessMap: assets.rust.roughnessMap,
+    roughness: 0.85,
+    metalness: 0.7,
+  });
   const mastMesh = new THREE.InstancedMesh(mastGeo, mastMat, masts.length);
   masts.forEach((m, i) => {
     m4.compose(p.set(m.x, m.y, m.z), q, s.set(m.r, m.h, m.r));

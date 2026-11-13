@@ -14,6 +14,7 @@ export const PRESETS = {
     bloomLevels: 5,
     shadows: false,
     neonLights: 3,
+    dynamicRes: true,
   },
   medium: {
     name: 'medium',
@@ -29,6 +30,7 @@ export const PRESETS = {
     bloomLevels: 7,
     shadows: false,
     neonLights: 6,
+    dynamicRes: true,
   },
   high: {
     name: 'high',
@@ -44,6 +46,7 @@ export const PRESETS = {
     bloomLevels: 8,
     shadows: true,
     neonLights: 8,
+    dynamicRes: false,
   },
 };
 

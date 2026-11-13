@@ -25,6 +25,7 @@ export class PostFX {
     this.quality = quality;
     this.composer = null;
     this.time = 0;
+    this.renderScale = 1; // dynamic resolution multiplier on the preset pixel ratio
     this.afterFog = []; // factories (quality) => Pass, inserted after the fog pass
     this.build();
   }
@@ -74,8 +75,8 @@ export class PostFX {
     this.setSize(window.innerWidth, window.innerHeight);
   }
 
-  setSize(w, h) {
-    this.renderer.setPixelRatio(this.quality.current.pixelRatio);
+  setSize(w = window.innerWidth, h = window.innerHeight) {
+    this.renderer.setPixelRatio(this.quality.current.pixelRatio * this.renderScale);
     this.composer.setSize(w, h);
   }
 

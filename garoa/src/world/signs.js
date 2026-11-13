@@ -194,7 +194,7 @@ const NEON_FRAG = /* glsl */ `
   }
 `;
 
-export function createSigns(city, rndSeed = 1) {
+export function createSigns(city, assets) {
   const rnd = city.rnd;
   const R = (a, b) => a + (b - a) * rnd();
   const group = new THREE.Group();
@@ -297,7 +297,15 @@ export function createSigns(city, rndSeed = 1) {
   neon.name = 'neon';
   neon.renderOrder = 2;
   neon.frustumCulled = false;
-  const boxMat = new THREE.MeshStandardMaterial({ color: 0x0b0a0c, roughness: 0.4, metalness: 0.6 });
+  // weathered steel sign cans (Poly Haven rusty_metal_02, darkened)
+  const boxMat = new THREE.MeshStandardMaterial({
+    color: 0x3a3634,
+    map: assets.rust.map,
+    normalMap: assets.rust.normalMap,
+    roughnessMap: assets.rust.roughnessMap,
+    roughness: 0.9,
+    metalness: 0.55,
+  });
   const boxes = new THREE.Mesh(mergeGeometries(boxGeos), boxMat);
   boxes.name = 'sign-boxes';
   boxes.castShadow = true;

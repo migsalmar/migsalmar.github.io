@@ -38,11 +38,12 @@ export function buildWorld({ scene, renderer, assets, quality, walkmap, camera }
   updaters.push((t) => (city.material.userData.uniforms.uTime.value = t));
   console.info('[garoa] city', JSON.stringify(city.counts));
 
-  const signs = createSigns(city);
+  const signs = createSigns(city, assets);
   scene.add(signs.group);
   signs.setLightBudget(quality.current.neonLights);
   const holo = createHologram();
   scene.add(holo.group);
+  holo.spill.visible = quality.current.neonLights > 3;
   const pix = createPixacao(city);
   scene.add(pix.mesh);
   const avi = createAviationLights(city.aviation, city.rnd);
@@ -89,6 +90,7 @@ export function buildWorld({ scene, renderer, assets, quality, walkmap, camera }
     heli,
     onQuality(q) {
       signs.setLightBudget(q.neonLights);
+      holo.spill.visible = q.neonLights > 3;
       rain.setCounts(q);
       applyShadows(q);
     },

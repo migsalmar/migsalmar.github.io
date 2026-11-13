@@ -165,7 +165,7 @@ export function createCity(assets) {
         const nearGap = Math.min(Math.abs(z0 - gapZ), Math.abs(z1 + gapZ), Math.abs(z0 + gapZ), Math.abs(z1 - gapZ)) < 2;
         const nearMart = side === 1 && (Math.abs(z1 - MARTINELLI.z0) < 3 || Math.abs(z0 - MARTINELLI.z1) < 3);
         let height = 45 + Math.pow(rnd(), 1.4) * 110;
-        if (rnd() < 0.12) height = R(150, 205);
+        if (rnd() < 0.12) height = R(150, 172);
         if (nearGap) height = R(52, 64);
         if (nearMart) height = R(58, 74);
         const x0 = side > 0 ? face : -face - depth;

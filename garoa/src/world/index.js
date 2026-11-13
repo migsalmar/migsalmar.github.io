@@ -8,9 +8,10 @@ import { createSigns } from './signs.js';
 import { createHologram } from './hologram.js';
 import { createPixacao } from './pixacao.js';
 import { createAviationLights } from './aviation.js';
+import { createHelicopter } from './helicopter.js';
 
 // Assembles the scene. Each component exposes an optional update(t, dt, camera).
-export function buildWorld({ scene, assets, quality, walkmap, camera }) {
+export function buildWorld({ scene, renderer, assets, quality, walkmap, camera }) {
   const updaters = [];
   const timeU = { value: 0 };
   scene.environment = assets.envMap;
@@ -46,6 +47,28 @@ export function buildWorld({ scene, assets, quality, walkmap, camera }) {
   scene.add(pix.mesh);
   const avi = createAviationLights(city.aviation, city.rnd);
   scene.add(avi.mesh);
+  const heli = createHelicopter(scene);
+  const slColor = new THREE.Color(1.0, 0.95, 0.86);
+  let post = null;
+  const applyShadows = (q) => {
+    renderer.shadowMap.enabled = q.shadows;
+    renderer.shadowMap.type = THREE.PCFShadowMap;
+    heli.setShadows(q.shadows);
+    scene.traverse((o) => {
+      if (o.material) (Array.isArray(o.material) ? o.material : [o.material]).forEach((m) => (m.needsUpdate = true));
+    });
+  };
+  applyShadows(quality.current);
+  updaters.push((t) => {
+    heli.update(t);
+    const st = heli.state;
+    post?.fog.setSearchlight(st.pos, st.dir, st.angle, slColor, 70);
+    const ru = rain.uniforms;
+    ru.uSLPos.value.copy(st.pos);
+    ru.uSLDir.value.copy(st.dir);
+    ru.uSLCos.value = Math.cos(st.angle);
+    ru.uSLColor.value.copy(slColor).multiplyScalar(140);
+  });
   updaters.push((t) => {
     signs.uniforms.uTime.value = t;
     holo.uniforms.uTime.value = t;
@@ -63,10 +86,14 @@ export function buildWorld({ scene, assets, quality, walkmap, camera }) {
     rain,
     signs,
     holo,
+    heli,
     onQuality(q) {
       signs.setLightBudget(q.neonLights);
+      rain.setCounts(q);
+      applyShadows(q);
     },
-    attachPost(post) {
+    attachPost(p) {
+      post = p;
       post.afterFog = [
         (q) => {
           rain.setCounts(q);

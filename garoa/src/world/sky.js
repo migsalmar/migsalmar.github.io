@@ -38,13 +38,16 @@ export function createSky() {
         float c = fbm(cp * 1.4);
         float c2 = fbm(cp * 4.0 + 3.0);
         float clouds = smoothstep(0.25, 0.85, c * 0.75 + c2 * 0.35);
+        // the plane projection stretches into streaks at grazing angles: fade to a flat deck
+        float horizon = smoothstep(0.03, 0.3, d.y);
+        clouds = mix(0.45, clouds, horizon);
         vec3 sodium = vec3(1.0, 0.42, 0.16);
         vec3 base = vec3(0.012, 0.008, 0.010);
         // cloud underside brightness falls off away from the horizon (city glow)
         float glow = mix(0.15, 0.035, pow(h, 0.55));
         vec3 col = base + sodium * glow * (0.35 + 0.9 * clouds);
         // faint magenta/cyan neon bounce in patches
-        float tint = fbm(cp * 0.6 + 11.0);
+        float tint = mix(0.5, fbm(cp * 0.6 + 11.0), horizon);
         col += vec3(0.25, 0.02, 0.18) * 0.05 * smoothstep(0.55, 0.8, tint) * clouds;
         col += vec3(0.0, 0.12, 0.16) * 0.04 * smoothstep(0.6, 0.85, 1.0 - tint) * clouds;
         col *= 1.0 - 0.35 * smoothstep(0.2, 1.0, h);

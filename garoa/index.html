@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>GAROA · Vale do Anhangabaú 2087</title>
+    <style>
+      html, body { margin: 0; height: 100%; background: #050304; overflow: hidden; }
+      canvas#view { display: block; width: 100vw; height: 100vh; }
+      #hud { position: fixed; inset: 0; pointer-events: none; font: 12px/1.4 ui-monospace, Menlo, Consolas, monospace; color: #ffcf9e; }
+      #hud .tl { position: absolute; left: 16px; top: 14px; letter-spacing: 0.08em; text-shadow: 0 0 6px #ff7a2a88; }
+      #hud .tl b { font-size: 15px; letter-spacing: 0.3em; color: #ffe2c2; }
+      #hud .tr { position: absolute; right: 16px; top: 14px; text-align: right; }
+      #hud .bl { position: absolute; left: 16px; bottom: 14px; opacity: 0.8; }
+      #gate { position: fixed; inset: 0; display: grid; place-items: center; background: radial-gradient(ellipse at center, #1a0d08cc, #050304ee); color: #ffd9b3; font: 14px/1.6 ui-monospace, Menlo, Consolas, monospace; cursor: pointer; text-align: center; }
+      #gate h1 { font-size: 46px; letter-spacing: 0.5em; margin: 0 0 6px; color: #ffb36b; text-shadow: 0 0 18px #ff6a1a, 0 0 2px #fff; font-weight: 700; }
+      #gate p { margin: 4px 0; opacity: 0.85; }
+      #gate .k { color: #6ff3ff; }
+      .hidden { display: none !important; }
+      body.shot #hud, body.shot #gate { display: none !important; }
+    </style>
+  </head>
+  <body>
+    <canvas id="view"></canvas>
+    <div id="hud">
+      <div class="tl"><b>GAROA</b><br />VALE DO ANHANGABAÚ · SÃO PAULO · 2087</div>
+      <div class="tr"><span id="fps">-- fps</span><br /><span id="qual">quality: --</span></div>
+      <div class="bl">WASD move · Shift run · Q quality · 1/2/3 viewpoints · Esc release</div>
+    </div>
+    <div id="gate">
+      <div>
+        <h1>GAROA</h1>
+        <p>Vale do Anhangabaú, 2087. Garoa perpétua.</p>
+        <p>click to enter</p>
+        <p><span class="k">WASD</span> move · <span class="k">Shift</span> run · <span class="k">mouse</span> look · <span class="k">Q</span> quality · <span class="k">1 2 3</span> viewpoints</p>
+      </div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
